@@ -10,14 +10,20 @@ export class HomeComponent {
 
   newSongs: any[] = []
   loading: boolean
+  error: boolean
+  messageError: string
 
   constructor(private Spotify: SpotifyService) {
     this.loading = true
+    this.error = false
 
     this.Spotify.getNewReleases()
       .subscribe((data: any) => {
         this.newSongs = data
         this.loading = false
+      }, (errorServicio) => {
+        this.error = true
+        this.messageError = errorServicio.error.error.message
       })
   }
 
