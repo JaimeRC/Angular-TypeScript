@@ -1,6 +1,3 @@
-import { constructDependencies } from "@angular/core/src/di/reflective_provider";
-
-
 export class ListItem {
 
     desc: string
