@@ -1,6 +1,5 @@
 import { ListItem } from "./list-item.model";
 
-
 export class List {
 
     id: number
