@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>{{list.title}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list-header>Tareas por hacer</ion-list-header>
+
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Nuevo Item</ion-label>
+            <ion-input [(ngModel)]="nameItem" type="text" (keyUp.enter)="addItem()"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="list.items.length > 0">
+        <ion-list-header>Tareas por realizar</ion-list-header>
+
+        <ion-item-sliding *ngFor="let item of list.items; let i = index" class="animated fadeInDown">
+            <button ion-item detail-none (click)="updateTask(item)">
+                <ion-icon *ngIf="item.completado" name="checkbox-outline" item-start> </ion-icon>
+                <ion-icon *ngIf="item.completado" name="square-outline" item-start> </ion-icon>
+                {{item.desc}}
+            </button>
+        
+            <ion-item-options side="right">
+                <button ion-button icon-only color="danger" (click)="removeItem(i)">
+                    <ion-icon name="close"></ion-icon>
+                </button>
+                <button ion-button color="secondary">
+                    <ion-icon name="call"></ion-icon>
+                    Call
+                </button>
+            </ion-item-options>
+            <ion-item-options side="right">
+                <button ion-button color="primary">
+                    <ion-icon name="mail"></ion-icon>
+                    Email
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+    </ion-list>
+</ion-content>
