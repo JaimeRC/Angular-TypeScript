@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 
-import { PendientePage } from '../pendientes/pendientes.component';
-import {TerminadosPAge} from '../terminados/terminados.component'
+import { PendientesPage } from '../pendientes/pendientes.component';
+import { TerminadosPage } from '../terminados/terminados.component'
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  tab1Root = PendientePage;
-  tab2Root = TerminadosPAge;
+  tab1Root = PendientesPage;
+  tab2Root = TerminadosPage;
 
   constructor() {
 
