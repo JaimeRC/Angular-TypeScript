@@ -34,12 +34,13 @@ export class ListsComponent {
         const alert = this.alertCtrl.create({
             title: 'Editar Nombre',
             message: 'Editar el nombre de la Lista',
-            inputs: [{ name: 'Titulo', placeholder: 'Nombre de la Lista', value: list.title }],
+            inputs: [{ name: 'title', placeholder: 'Nombre de la Lista', value: list.title }],
             buttons: [{
                 text: 'Cancelar'
             }, {
                 text: 'Guardar',
                 handler: data => {
+                    console.log(data,"editar")
                     if (data.title.length === 0) {
                         return
                     }

@@ -1,21 +1,25 @@
 <ion-list>
-    <ion-item-sliding *ngFor="let list of deseosService.list | filterComplete:complete" #slidingItem>
+    <ion-item-sliding #slidingItem *ngFor="let list of deseosService.lists | filterComplete: complete">
+
+        <ion-item-options side="left">
+            <button ion-button ion-only color="info" (click)="editList(list,slidingItem)">
+                <ion-icon name="create"></ion-icon>
+            </button>
+        </ion-item-options>
+
         <button ion-item (click)="itemSelected(list)">
             {{ list.title }}
             <ion-note item-end>
                 {{list.items.lenght}} items
             </ion-note>
         </button>
-        <ion-item-options side="left">
-            <button ion-button ion-only color="danger" (click)="removeList()">
+
+        <ion-item-options side="right">
+            <button ion-button ion-only color="danger" (click)="removeList(list)">
                 <ion-icon name="close"></ion-icon>
             </button>
         </ion-item-options>
-        <ion-item-options side="right">
-            <button ion-button ion-only color="info" (click)="editList(list,slidingItem)">
-                <ion-icon name="create"></ion-icon>
-            </button>
-        </ion-item-options>
+
 
     </ion-item-sliding>
 
