@@ -14,16 +14,17 @@ export class PendientesPage {
         public alertCtrl: AlertController) {
     }
 
-    addlist() {
+    addList() {
         const alert = this.alertCtrl.create({
             title: 'Nueva Lista',
             message: 'Nombre de la nueva lista de Deseos',
-            inputs: [{ name: 'Titulo', placeholder: 'Nombre de la Lista' }],
+            inputs: [{ name: 'title', placeholder: 'Nombre de la Lista' }],
             buttons: [{
                 text: 'Cancelar'
             }, {
                 text: 'Agregar',
                 handler: data => {
+                    console.log(data,"agregar")
                     if (data.title.length === 0) {
                         return
                     }
