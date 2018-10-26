@@ -40,7 +40,6 @@ export class ListsComponent {
             }, {
                 text: 'Guardar',
                 handler: data => {
-                    console.log(data,"editar")
                     if (data.title.length === 0) {
                         return
                     }

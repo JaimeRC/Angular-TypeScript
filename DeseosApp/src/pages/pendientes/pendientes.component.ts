@@ -24,7 +24,6 @@ export class PendientesPage {
             }, {
                 text: 'Agregar',
                 handler: data => {
-                    console.log(data,"agregar")
                     if (data.title.length === 0) {
                         return
                     }
