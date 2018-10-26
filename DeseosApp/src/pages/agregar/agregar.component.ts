@@ -16,12 +16,11 @@ export class AgregarPage {
         private navParams: NavParams) {
         const title = this.navParams.get('title')
 
-        if (this.navParams.get('title')) {
-            this.list = this.navParams.get('title')
+        if (this.navParams.get('list')) {
+            this.list = this.navParams.get('list')
 
         } else {
             this.list = new List(title)
-
             this.deseosService.addList(this.list)
         }
     }
@@ -47,11 +46,11 @@ export class AgregarPage {
             this.list.finish = false
             this.list.finishDate = null
         }
-        
+
         this.deseosService.saveStorage()
     }
 
-    removeItem(index) {
+    removeItem(index: number) {
         this.list.items.splice(index, 1)
         this.deseosService.saveStorage()
     }
