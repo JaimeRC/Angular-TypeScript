@@ -14,7 +14,7 @@ export class FilterCompletePipe implements PipeTransform {
   /**
    * Takes a value and makes it lowercase.
    */
-  transform(lists: List[], complete: boolean) {
+   transform(lists: List[], complete: boolean) {
     return lists.filter(list => list.finish === complete)
   }
 }
